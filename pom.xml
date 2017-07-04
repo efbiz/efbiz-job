@@ -14,7 +14,7 @@
 		<module>efbiz-job-core</module>
 		<module>efbiz-job-admin</module>
 		<module>efbiz-job-executor-springboot-example</module>
-    </modules>
+	</modules>
 
 	<build>
 		<plugins>
@@ -104,33 +104,33 @@
 						</executions>
 					</plugin>
 					<!-- GPG -->
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-gpg-plugin</artifactId>
-                        <version>1.6</version>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>1.6</version>
 						<configuration>
 							<useAgent>false</useAgent>
 						</configuration>
-                        <executions>
-                            <execution>
-                                <phase>verify</phase>
-                                <goals>
-                                    <goal>sign</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
+						<executions>
+							<execution>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
 				</plugins>
 			</build>
 			<distributionManagement>
+				<repository>
+					<id>releases</id>
+					<url>http://mvn.expectfly.com/repository/maven-releases/</url>
+				</repository>
 				<snapshotRepository>
-					<id>efbiz</id>
+					<id>snapshots</id>
 					<url>http://mvn.expectfly.com/repository/maven-snapshots/</url>
 				</snapshotRepository>
-				<repository>
-					<id>efbiz</id>
-					<url>http://mvn.expectfly.com/repository/maven-central/</url>
-				</repository>
 			</distributionManagement>
 		</profile>
 	</profiles>
